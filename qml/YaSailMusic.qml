@@ -39,7 +39,6 @@ ApplicationWindow {
                 ++playListModel.currentIndex
             }
         }
-
     }
 
     MprisPlayer {
@@ -47,7 +46,6 @@ ApplicationWindow {
 
         property string artist: qsTr("Loading")
         property string song: qsTr("tags...")
-
 
         serviceName: "yandex-music"
         identity: "YaSailMusic"
