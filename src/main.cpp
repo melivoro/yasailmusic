@@ -10,7 +10,7 @@
 #include <QtGlobal>
 #include <QSettings>
 
-#include </home/okabe2011/SailfishOS/mersdk/targets/SailfishOS-3.4.0.24-armv7hl.default/usr/include/sailfishapp/sailfishapp.h>
+#include <sailfishapp.h>
 
 #include <stdio.h>
 #include <stdlib.h>
