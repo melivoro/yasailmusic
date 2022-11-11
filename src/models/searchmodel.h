@@ -1,27 +1,41 @@
-#ifndef PLAYLISTMODEL_H
-#define PLAYLISTMODEL_H
+#ifndef SearchModel_H
+#define SearchModel_H
 
 #include <QAbstractListModel>
 #include <QJsonValue>
 #include <QObject>
-#include "../track.h"
+#include "playlistmodel.h"
 
 #include "../apirequest.h"
+#include "../track.h"
 
-class PlaylistModel : public QAbstractListModel
+class SearchModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex NOTIFY currentIndexChanged)
 
 public:
+    /*struct Track{
+        int trackId;
+        int artistId;
+        QString artistName;
+        QString artistCover;
+        int albumCoverId;
+        QString albumName;
+        QString albumCover;
+        QString trackName;
+        QString type;
+        int duration;
+        QString storageDir;
+        bool liked;
+        QString fileUrl;
+        QString url;
+    };*/
 
+    explicit SearchModel(QObject *parent = 0);
+    virtual ~SearchModel() {};
 
-
-    //typedef QList<Track*> TrackList;
-    explicit PlaylistModel(QObject *parent = 0);
-    virtual ~PlaylistModel() {};
-
-     //static PlaylistModel *model;
+  //   static SearchModel *model;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role) const;
@@ -30,16 +44,17 @@ public:
     bool insertRows(int position, int rows, Track *item, const QModelIndex &index = QModelIndex());
     bool removeRows(int position, int rows, const QModelIndex &index = QModelIndex());
 
-    Q_INVOKABLE void loadMyWave();
+    Q_INVOKABLE void searchTracks(QString q);
     Q_INVOKABLE void playTrack();
     Q_INVOKABLE void sendFeedback(QString type);
     Q_INVOKABLE void setCurrentIndex(int currentIndex);
-    Q_INVOKABLE void setNewData();
     int currentIndex() {return m_currentIndex;}
     QString currentSong() { return m_currentSong;}
     QString currentArtist() { return m_currentArtist;}
+     bool m_loading;
+      QList<Track*> m_playList;
+      Q_INVOKABLE QList<Track*> playlist();
 
-    QList<Track*> m_playList;
 signals:
     void loadFirstDataFinished();
     void currentIndexChanged(int currentIndex);
@@ -48,10 +63,10 @@ public slots:
     QVariant get(const int idx);
 
 private slots:
-    void getWaveFinished(const QJsonValue &value);
+    void getSearchTracksFinished(const QJsonValue &value);
 
 private:
-    bool m_loading;
+
     int m_currentIndex;
     QString batchid;
     QString m_currentSong;
@@ -62,4 +77,4 @@ private:
     QJsonValue m_oldValue;
 };
 
-#endif // PLAYLISTMODEL_H
+#endif // SearchModel_H

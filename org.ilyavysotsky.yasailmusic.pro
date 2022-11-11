@@ -11,7 +11,9 @@ SOURCES += \
     src/cacher.cpp \
     src/downloader.cpp \
     src/models/playlistmodel.cpp \
+    src/models/searchmodel.cpp \
     src/settings.cpp \
+    src/track.cpp \
     src/main.cpp
 
 HEADERS += \
@@ -20,7 +22,9 @@ HEADERS += \
     src/cacher.h \
     src/downloader.h \
     src/models/playlistmodel.h \
-    src/settings.h
+    src/models/searchmodel.h \
+    src/settings.h \
+    src/track.h
 
 DISTFILES += \
     rpm/org.ilyavysotsky.yasailmusic.yaml \

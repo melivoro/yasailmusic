@@ -57,19 +57,14 @@
         <translation>Моя волна</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="47"/>
-        <source>Search audio...</source>
-        <translation>Поиск аудио...</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="101"/>
-        <source>Pause</source>
-        <translation>Пауза</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="101"/>
+        <location filename="../qml/pages/MainPage.qml" line="83"/>
         <source>Play</source>
         <translation>Играть</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="83"/>
+        <source>Pause</source>
+        <translation>Пауза</translation>
     </message>
 </context>
 <context>
@@ -81,14 +76,22 @@
     </message>
 </context>
 <context>
+    <name>SearchPage</name>
+    <message>
+        <location filename="../qml/pages/SearchPage.qml" line="19"/>
+        <source>Search audio...</source>
+        <translation type="unfinished">Поиск аудио...</translation>
+    </message>
+</context>
+<context>
     <name>YaSailMusic</name>
     <message>
-        <location filename="../qml/YaSailMusic.qml" line="55"/>
+        <location filename="../qml/YaSailMusic.qml" line="72"/>
         <source>Loading</source>
         <translation>Загрузка</translation>
     </message>
     <message>
-        <location filename="../qml/YaSailMusic.qml" line="56"/>
+        <location filename="../qml/YaSailMusic.qml" line="73"/>
         <source>tags...</source>
         <translation>тэги...</translation>
     </message>
